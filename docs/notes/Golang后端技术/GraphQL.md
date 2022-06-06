@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
-title: wire使用相关
-date: 2022-05-28
+title: GraphQL
 category:
   - Golang后端
 tag:
@@ -12,3 +10,4 @@ tag:
 # 此页面会出现在首页的文章板块中
 star: true
 ---
+# GraphQL
