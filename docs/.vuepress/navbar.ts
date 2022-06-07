@@ -26,7 +26,6 @@ export const zh = navbar([
       icon: "read", 
       prefix: "/docs/",
       children: [
-        {text: "Golang相关", icon: "note", link: "/docs/Golang相关/"},
       ],
     },
     {

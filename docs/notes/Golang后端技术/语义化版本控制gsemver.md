@@ -6,10 +6,6 @@ category:
 tag:
   - gsemver
   - 后端
-# 此页面会在文章列表置顶
-sticky: true
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 
 

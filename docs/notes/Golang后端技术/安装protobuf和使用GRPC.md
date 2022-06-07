@@ -7,8 +7,6 @@ tag:
   - protobuf
   - 后端
   - GPRC
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # 安装protobuf和使用GRPC
 

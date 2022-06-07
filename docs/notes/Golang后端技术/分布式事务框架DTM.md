@@ -8,7 +8,6 @@ tag:
   - 后端
   - 分布式
   - DTM
-star: true
 ---
 # 分布式事务框架DTM
 

@@ -5,8 +5,6 @@ category:
   - Golang后端
 tag:
   - 后端
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # testing单元测试及自动生成
 

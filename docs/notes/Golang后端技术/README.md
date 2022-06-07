@@ -4,6 +4,7 @@ index: false
 icon: creative
 category:
   - 笔记
+star: true
 ---
 ## 基础
 - [名词解释](名词解释.md)

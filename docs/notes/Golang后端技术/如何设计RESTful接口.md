@@ -6,8 +6,6 @@ category:
 tag:
   - 接口
   - 后端
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # 如何设计RESTful接口
 

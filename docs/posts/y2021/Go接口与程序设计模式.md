@@ -7,6 +7,7 @@ category:
 tag:
   - Golang
   - 接口
+isOriginal: true
 ---
 
 ## 前言

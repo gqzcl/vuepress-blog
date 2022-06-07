@@ -6,8 +6,6 @@ category:
 tag:
   - 后端
   - 网络框架
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # 高性能网络包gnet
 

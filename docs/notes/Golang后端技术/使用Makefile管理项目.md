@@ -6,8 +6,6 @@ category:
 tag:
   - makefile
   - 后端
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # 使用Makefile管理项目
 

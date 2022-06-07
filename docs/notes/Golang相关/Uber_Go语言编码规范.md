@@ -5,8 +5,6 @@ category:
   - Golang相关
 tag:
   - Golang
-# 此页面会出现在首页的文章板块中
-star: true
 ---
 # Uber_Go语言编码规范
 
