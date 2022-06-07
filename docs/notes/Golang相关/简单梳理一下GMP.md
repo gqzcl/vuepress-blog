@@ -46,7 +46,7 @@ schedule函数负责调度，在shedule函数中首先会检测程序是否处�
 
 P寻找下一个G的优先级为：runnext>本地>全局>网络>偷取
 
-![Untitled.png](assets/Untitled-20211126205810-0ddvy5k.png)
+![Untitled.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120102.png)
 
 ### 获取本地运行队列
 

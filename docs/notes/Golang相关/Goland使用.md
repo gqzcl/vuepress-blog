@@ -21,7 +21,7 @@ star: true
 
 新版本当然是使用go mod了
 
-![image.png](assets/image-20211202175450-4qgj45a.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120835.png)
 
 可以在创建项目的时候配置好环境变量
 
@@ -35,7 +35,7 @@ GOPROXY=https://goproxy.cn,direct
 
 添加一个go fmt即可
 
-![image.png](assets/image-20211202180927-vet7932.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120853.png)
 
 设置完之后就会在自动格式化了，最好重启一下，不然可能不生效。
 
@@ -47,12 +47,12 @@ GOPROXY=https://goproxy.cn,direct
 
 **在这里添加运行环境**
 
-![image.png](assets/image-20211202212140-z7mzw6f.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120911.png)
 
 **添加如下内容**
 
-![image.png](assets/image-20211202212246-vidakkb.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607121048.png)
 
 ### 使用wsl终端
 
-![image.png](assets/image-20211202210925-356z06p.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607121109.png)

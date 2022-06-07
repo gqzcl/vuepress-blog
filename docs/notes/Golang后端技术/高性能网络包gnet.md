@@ -4,9 +4,8 @@ title: 高性能网络包gnet
 category:
   - Golang后端
 tag:
-  - 事务
   - 后端
-  - 分布式
+  - 网络框架
 # 此页面会出现在首页的文章板块中
 star: true
 ---

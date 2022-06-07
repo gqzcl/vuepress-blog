@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: TCC事务模式
-date: 2022-05-27
 category:
   - Golang后端
 tag:
@@ -26,7 +24,7 @@ TCC分为3个阶段
 
 如果我们要进行一个类似于银行跨行转账的业务，转出（TransOut）和转入（TransIn）分别在不同的微服务里，一个成功完成的TCC事务典型的时序图如下：
 
-![tcc_normal](https://dtm.pub/assets/tcc_normal.dea14fb3.jpg)
+![tcc_normal](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607115824.png)
 
 ### 简单的TCC
 
@@ -76,7 +74,7 @@ res2, rerr := tcc.CallBranch(&TransReq{Amount: 30, TransInResult: "FAILURE"}, Bu
 
 失败的时序图如下：
 
-![tcc_rollback](https://dtm.pub/assets/tcc_rollback.f28601d7.jpg)
+![tcc_rollback](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607115846.png)
 
 ### Confirm/Cancel操作异常
 
@@ -113,7 +111,7 @@ TCC 的事务编排放在了应用端上，就是事务一共包含多少个分�
 
 dtm的Tcc事务模式，支持子事务嵌套，流程图如下：
 
-![nested_trans](https://dtm.pub/assets/nested_trans.23261beb.jpg)
+![nested_trans](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607115907.png)
 
 在这个流程图中，Order这个微服务，管理了订单相关的数据修改，同时还管理了一个嵌套的子事务，因此他即扮演了RM的角色，也扮演了AP的角色。
 

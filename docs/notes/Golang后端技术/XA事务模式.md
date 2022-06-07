@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: XA事务模式
-date: 2022-05-27
 category:
   - Golang后端
 tag:
@@ -42,7 +40,7 @@ xa commit '4fPqCNTYeSG'
 
 我们来完成一个完整的XA，我们先看一个成功的XA时序图：
 
-![xa_normal](https://dtm.pub/assets/xa_normal.5a0ce600.jpg)
+![xa_normal](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120000.png)
 
 ### HTTP接入
 
@@ -90,7 +88,7 @@ req := &busi.TransReq{Amount: 30, TransInResult: "FAILURE"}
 
 失败的时序图如下：
 
-![xa_rollback](https://dtm.pub/assets/xa_rollback.dccc3558.jpg)
+![xa_rollback](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607120018.png)
 
 ### 注意点
 

@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: 使用Makefile管理项目
-date: 2022-05-28
 category:
   - Golang后端
 tag:

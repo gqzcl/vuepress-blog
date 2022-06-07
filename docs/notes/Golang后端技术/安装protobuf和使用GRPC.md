@@ -4,9 +4,9 @@ title: 安装protobuf和使用GRPC
 category:
   - Golang后端
 tag:
-  - 事务
+  - protobuf
   - 后端
-  - 分布式
+  - GPRC
 # 此页面会出现在首页的文章板块中
 star: true
 ---
@@ -16,7 +16,7 @@ star: true
 
 ### 下载
 
-首先下载protocol编译器[Protocol Buffer]()
+首先下载protocol编译器[Protocol Buffer](https://github.com/protocolbuffers/protobuf/releases)
 
 ```protobuf
 wget https://github.com/protocolbuffers/protobuf/releases/download/vx.x.x/protoc-x.x.x-linux-x86_64.zip
@@ -111,7 +111,6 @@ message HelloReply {
 //go:generate protoc -I./ -I$GOPATH/src --go_out=.  --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative logic/logic.proto
 ```
 
-![Untitled.png](assets/Untitled-20211126203804-380gbd4.png)
 
 ```go
 $ go get -u google.golang.org/grpc

@@ -7,6 +7,7 @@ tag:
   - 事务
   - 后端
   - 分布式
+  - DTM
 star: true
 ---
 # 分布式事务框架DTM
@@ -15,7 +16,7 @@ star: true
 
 假设我们要进行一个跨行转账，A转给B30元，因为A、B不在同一个数据库，无法通过本地事务解决，因此使用了SAGA分布式事务来解决这个问题，下面是一个成功的SAGA事务（参考[SAGA](https://dtm.pub/practice/saga.html)）的时序图：
 
-![image.png](assets/image-20220605184103-9hdw11q.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607111951.png)
 
 整个全局事务分为如下几步：
 
@@ -28,7 +29,7 @@ star: true
 
 ### DTM架构图
 
-![image.png](assets/image-20220605184143-nomur2n.png)
+![image.png](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607112011.png)
 
 整个DTM架构中，一共有三个角色，分别承担了不同的功能
 
@@ -114,7 +115,7 @@ DTM的架构和角色，与X/Open XA的DTP模型一致，RM、AP、TM担当的�
 
 DTM对比了其他事务框架的角色划分和DTP的角色划分，认为DTP在总体架构，依旧能够适用于跨服务这种分布式事务形式，因此保留了AP、RM、TM的划分
 
-![xa-dtp](https://dtm.pub/assets/xa-dtp.62f4d7d0.png)
+![xa-dtp](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607112040.png)
 
 主要区别如下：
 

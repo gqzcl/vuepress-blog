@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: wire使用相关
-date: 2022-05-28
 category:
   - Golang后端
 tag:

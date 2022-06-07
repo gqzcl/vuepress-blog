@@ -61,8 +61,6 @@ CAP是说一个分布式系统最多只能同时满足一致性（Consistency）
 
 PACELC模型是在出现网络分区错误的情况下，取前半部分PAC，其内容和PAC基本一致，当没有网络分区错误的情况下，则取LC，即延迟（Latency）和一致性（Consistency）
 
-![9bbd9f204f8c8aa5ad62bf34b2f8cf55.png](assets/9bbd9f204f8c8aa5ad62bf34b2f8cf55-20220603174654-gp1iu3m.png)
-
 ## BASE理论
 
 BASE 是 `Basically Available`（基本可用）、`Soft State`（软状态）和 `Eventually Consistent`（最终一致性）三个单词的简写，作用是保证系统的可用性，然后通过最终一致性来代替强一致性，它是目前分布式系统设计中最具指导意义的经验总结。

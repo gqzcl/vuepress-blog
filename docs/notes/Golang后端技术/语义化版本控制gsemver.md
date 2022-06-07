@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: 语义化版本控制gsemver
-date: 2020-01-01
 category:
   - Golang后端
 tag:

@@ -1,8 +1,6 @@
 ---
-index: 2
 icon: page
 title: AT vs XA
-date: 2022-05-27
 category:
   - Golang后端
 tag:

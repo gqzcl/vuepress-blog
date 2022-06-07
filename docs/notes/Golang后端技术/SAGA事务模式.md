@@ -40,7 +40,7 @@ SAGA最初出现在1987年Hector Garcaa-Molrna & Kenneth Salem发表的论文[SA
 
 下面我们看一个成功完成的SAGA事务典型的时序图：
 
-![saga_normal](https://dtm.pub/assets/saga_normal.a2849672.jpg)
+![saga_normal](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607115626.png)
 
 在这个图中，我们的全局事务发起人，将整个全局事务的编排信息，包括每个步骤的正向操作和反向补偿操作定义好之后，提交给服务器，服务器就会按步骤执行前面SAGA的逻辑。
 
@@ -78,7 +78,7 @@ err := saga.Submit()
 
 失败的时序图如下：
 
-![saga_rollback](https://dtm.pub/assets/saga_rollback.8da8593f.jpg)
+![[saga_rollback](https://raw.githubusercontent.com/gqzcl/blog_image/master/20220607115707.png)
 
 补偿执行顺序
 
@@ -170,7 +170,7 @@ dtm默认情况下，重试策略是指数退避算法，可以避免出现故�
 
 在实际应用中，还遇见过一些业务场景，需要一些额外的技巧进行处理
 
-#### 部分第三方操作无法回滚[#](https://dtm.pub/practice/saga.html#%E9%83%A8%E5%88%86%E7%AC%AC%E4%B8%89%E6%96%B9%E6%93%8D%E4%BD%9C%E6%97%A0%E6%B3%95%E5%9B%9E%E6%BB%9A)
+#### 部分第三方操作无法回滚
 
 例如一个订单中的发货，一旦给出了发货指令，那么涉及线下相关操作，那么很难直接回滚。对于涉及这类情况的saga如何处理呢？
 
@@ -195,7 +195,7 @@ dtm默认情况下，重试策略是指数退避算法，可以避免出现故�
 
 对于发货操作，如果可能在校验数据上可能发生失败，那么将发货操作拆分为发货校验、发货两个服务则会清晰很多，发货校验可回滚，发货不可回滚同时也不会失败。
 
-#### 超时回滚[#](https://dtm.pub/practice/saga.html#%E8%B6%85%E6%97%B6%E5%9B%9E%E6%BB%9A)
+#### 超时回滚
 
 saga属于长事务，因此持续的时间跨度很大，可能是100ms到1天，因此saga没有默认的超时时间。
 
@@ -207,7 +207,7 @@ dtm支持saga事务单独指定超时时间，到了超时时间，全局事务�
 
 在saga事务中，设置超时时间一定要注意，这类事务里不能够包含无法回滚的事务分支，因为超时回滚时，已执行的无法回滚的分支，数据就是错的。
 
-#### 其他分支的结果作为输入[#](https://dtm.pub/practice/saga.html#%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%E7%9A%84%E7%BB%93%E6%9E%9C%E4%BD%9C%E4%B8%BA%E8%BE%93%E5%85%A5)
+#### 其他分支的结果作为输入
 
 前面的设计环节讲了为什么dtm没有支持这样的需求，那么如果极少数的实际业务有这样的需求怎么处理？例如B分支需要A分支的执行结果
 
@@ -223,7 +223,7 @@ Seata的SAGA采用了状态机实现，而DTM的SAGA没有采用状态机，因�
 
 我在DTM设计SAGA高级用法时，充分调研了状态机实现，经过仔细权衡之后，决定不采用状态机实现，主要原因如下：
 
-#### 易用性对比[#](https://dtm.pub/practice/saga.html#%E6%98%93%E7%94%A8%E6%80%A7%E5%AF%B9%E6%AF%94)
+#### 易用性对比
 
 可能在阿里内部，需要SAGA提供类似状态机的灵活性，但是在阿里外部，看到使用Seata的Saga事务的用户特别少。我调研了Seata中SAGA的开发资料，想要上手写一个简单的SAGA事务，需要
 
@@ -234,7 +234,7 @@ Seata的SAGA采用了状态机实现，而DTM的SAGA没有采用状态机，因�
 
 而对比之下，DTM的SAGA事务，则非常简单易用，开发者没有理解成本，通常五六行代码就完成了一个全局事务的编写，因此也成为DTM中，应用最为广泛的事务模式。而对于高级场景，DTM也经过实践的检验，以极简单的选项，例如EnableConcurrent、RetryInterval，解决了复杂的应用场景。目前收集到的用户需求中，暂未看到状态机能解决，而DTM的SAGA不能解决的案例。
 
-#### gRPC友好度[#](https://dtm.pub/practice/saga.html#grpc%E5%8F%8B%E5%A5%BD%E5%BA%A6)
+#### gRPC友好度
 
 gRPC 是云原生时代中应用非常广泛的协议。而Seata的状态机，对HTTP的支持度较好，而对gRPC的支持度不友好。一个gRPC服务中返回的结果，如果没有相关的pb定义文件，就无法解析出其中的字段，因此就无法采用状态机做灵活的判断，那么想用状态机的话，就必须固定结果类型，这样对应用的侵入性就比较强，适用范围就比较窄。
 

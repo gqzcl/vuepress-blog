@@ -20,7 +20,7 @@ star: true
 
 这里使用的是[MySQL drivers](https://github.com/go-sql-driver/mysql)
 
-```
+```go
 import (
     "database/sql"
     _ "github.com/go-sql-driver/mysql"
@@ -29,7 +29,7 @@ import (
 
 ### 连接DB
 
-```
+```go
 func main() {
     db, err := sql.Open("mysql",
         "user:password@tcp(127.0.0.1:3306)/hello")
@@ -42,7 +42,7 @@ func main() {
 
 `sql.Open`的第一个参数是driver名称，第二个参数是driver连接数据库的信息，各个driver可能不同。DB不是连接，并且只有当需要使用时才会创建连接，如果想立即验证连接，需要用`Ping()`方法，如下：
 
-```
+```go
 err = db.Ping()
 if err != nil {
     // do something here
@@ -55,7 +55,7 @@ sql.DB的设计就是用来作为长连接使用的。不要频繁Open, Close。
 
 如果方法包含`Query`，那么这个方法是用于查询并返回rows的。其他情况应该用`Exec()`。
 
-```
+```go
 var (
     id int
     name string
@@ -87,7 +87,7 @@ if err != nil {
 
 err在`Scan`后才产生，所以可以如下写：
 
-```
+```go
 var name string
 err = db.QueryRow("select name from users where id = ?", 1).Scan(&name)
 if err != nil {
@@ -100,7 +100,7 @@ fmt.Println(name)
 
 一般用Prepared Statements和`Exec()`完成`INSERT`, `UPDATE`, `DELETE`操作。
 
-```
+```go
 stmt, err := db.Prepare("INSERT INTO users(name) VALUES(?)")
 if err != nil {
     log.Fatal(err)
@@ -157,7 +157,7 @@ PS在Tx中唯一绑定一个连接，不会re-prepare。
 
 Tx和statement不能分离，在DB中创建的statement也不能在Tx中使用，因为他们必定不是使用同一个连接使用Tx必须十分小心，例如下面的代码：
 
-```
+```go
 tx, err := db.Begin()
 if err != nil {
     log.Fatal(err)
@@ -189,7 +189,7 @@ if err != nil {
 
 如果循环中发生错误会自动运行`rows.Close()`，用`rows.Err()`接收这个错误，Close方法可以多次调用。循环之后判断error是非常必要的。
 
-```
+```go
 for rows.Next() {
     // ...
 }
@@ -202,7 +202,7 @@ if err = rows.Err(); err != nil {
 
 如果你在rows遍历结束之前退出循环，必须手动关闭Resultset，并且接收error。
 
-```
+```go
 for rows.Next() {
     // ...
     break; // whoops, rows is not closed! memory leak...
@@ -217,7 +217,7 @@ if err = rows.Close(); err != nil {
 
 ### QueryRow()的error
 
-```
+```go
 var name string
 err = db.QueryRow("select name from users where id = ?", 1).Scan(&name)
 if err != nil {
@@ -228,7 +228,7 @@ fmt.Println(name)
 
 如果id为1的不存在，err为sql.ErrNoRows，一般应用中不存在的情况都需要单独处理。此外，Query返回的错误都会延迟到Scan被调用，所以应该写成如下代码：
 
-```
+```go
 var name string
 err = db.QueryRow("select name from users where id = ?", 1).Scan(&name)
 if err != nil {
@@ -247,7 +247,7 @@ fmt.Println(name)
 
 各个数据库处理方式不太一样，mysql为例：
 
-```
+```go
 if driverErr, ok := err.(*mysql.MySQLError); ok {
     // Now the error number is accessible directly
     if driverErr.Number == 1045 {
@@ -264,7 +264,7 @@ if driverErr, ok := err.(*mysql.MySQLError); ok {
 
 简单说就是设计数据库的时候不要出现null，处理起来非常费力。Null的type很有限，例如没有`sql.NullUint64`; null值没有默认零值。
 
-```
+```go
 for rows.Next() {
     var s sql.NullString
     err := rows.Scan(&s)
@@ -281,7 +281,7 @@ for rows.Next() {
 
 `rows.Columns()`的使用，用于处理不能得知结果字段个数或类型的情况，例如：
 
-```
+```go
 cols, err := rows.Columns()
 if err != nil {
     // handle the error

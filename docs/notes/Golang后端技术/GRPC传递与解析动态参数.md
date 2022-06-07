@@ -4,9 +4,9 @@ title: GRPC传递与解析动态参数
 category:
   - Golang后端
 tag:
-  - 事务
+  - 接口
   - 后端
-  - 分布式
+  - GRPC
 # 此页面会出现在首页的文章板块中
 star: true
 ---
