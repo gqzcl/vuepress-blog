@@ -80,7 +80,7 @@ func (t *T) InsertT() {
 
 ```go
 type CommonDB interface {
-	insert(ctx context.Context, instance interface{})
+	Insert(ctx context.Context, instance interface{})
 }
 // XormDB 实现CommonDB接口
 type XormDB struct {
@@ -100,7 +100,7 @@ func (t *T) AddDB() {
 }
 
 func (t *T) InsertT() {
-	t.db.insert(context.Background(), t)
+	t.db.Insert(context.Background(), t)
 }
 ```
 
