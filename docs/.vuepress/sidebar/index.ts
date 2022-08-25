@@ -4,6 +4,7 @@ import { Golang相关  } from "./notes/Golang相关";
 import { Golang后端技术  } from "./notes/Golang后端技术";
 import { Go进阶训练营  } from "./notes/Go进阶训练营";
 import { Git  } from "./notes/Git";
+import { Kubernetes } from "./notes/Kubernetes";
 import { Kafka  } from "./notes/Kafka";
 import { 数据库  } from "./notes/数据库";
 import { 数据结构  } from "./notes/数据结构";
@@ -53,6 +54,7 @@ export const zh = sidebar({
   "/notes/Golang后端技术/": Golang后端技术,
   "/notes/Go进阶训练营/": Go进阶训练营,
   "/notes/Git/": Git,
+  "/notes/Kubernetes/": Kubernetes,
   "/notes/Kafka/": Kafka,
   "/notes/数据库/": 数据库,
   "/notes/数据结构/": 数据结构,

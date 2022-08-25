@@ -12,6 +12,7 @@ export const zh = navbar([
         {text: "Golang后端技术", icon: "animation", link: "Golang后端技术/"},
         {text: "Golang进阶训练营", icon: "study", link: "Golang进阶训练营/"},
         {text: "Git", icon: "github", link: "Git/"},
+        {text: "Kubernetes", icon: "",link: "Kubernetes/"},
         {text: "Kafka", icon: "note", link: "Kafka/"},
         {text: "数据库", icon: "mysql", link: "数据库/"},               
         {text: "数据结构", icon: "stack", link: "数据结构/"},        
