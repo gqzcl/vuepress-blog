@@ -5,22 +5,15 @@ import * as sidebar from "./sidebar";
 
 export default hopeTheme({
   hostname: "https://gqzcl.cn",
-
   author: {
     name: "gqzcl",
     url: "https://gqzcl.cn",
   },
-
   iconPrefix: "iconfont icon-",
-
   logo: "/logo.svg",
-
   repo: "gqzcl",
-
   docsDir: "src",
-
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
-
   blog: {
     medias: {
       Email: "mailto:gqzcl@qq.com",
@@ -30,24 +23,19 @@ export default hopeTheme({
       Wechat: "/icon/wechat.jpg",
     },
   },
-
   locales: {
     
     "/": {
       // navbar
       navbar: navbar.zh,
-
       // sidebar
       sidebar: sidebar.zh,
-
       footer: '<a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">ICP备案号：苏ICP备19021780号</a> | <a href="/about/site.html">关于网站</a>' ,
-
       displayFooter: true,
       blog: {
         description: "后端开发工程师",
         intro: "/intro.html",
       },
-      
     },
 
     /**
@@ -56,84 +44,53 @@ export default hopeTheme({
     "/en/": {
       // navbar
       navbar: navbar.en,
-
       // sidebar
       sidebar: sidebar.en,
-
       footer: "Default footer",
-
       displayFooter: true,
-
       blog: {
         description: "A FrontEnd programmer",
         intro: "/en/intro.html",
       },
     },
   },
-
   encrypt: {
     config: {
       "/guide/encrypt.html": ["1234"],
       "/en/guide/encrypt.html": ["1234"],
     },
   },
-
   displayFooter: true,
   copyright: "Copyright © 2020-present gqzcl",
-
   plugins: {
     blog: {
-      autoExcerpt: true,
+      excerptLength:0,
     },
-
     comment: {
-      /**
-       * Using giscus
-       */
-      type: "giscus",
+      provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
-
-      /**
-       * Using twikoo
-       */
-      // type: "twikoo",
-      // envId: "https://twikoo.ccknbc.vercel.app",
-
-      /**
-       * Using Waline
-       */
-      // type: "waline",
-      // serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
-
     // markdown 增强插件
     mdEnhance: {
-      enableAll: true,
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
+      presentation:  ["highlight", "math", "search", "notes", "zoom"],
     },
-
     // feed
     feed:{
       atom: true,
       json: true,
       rss: true,
     },
-
     // 语法高亮
     prismjs: true,
-
-    // copyright: {
-    //   hostname: "gqzcl.cn",
-    //   author: "gqzcl",
-    //   license: "MIT",
-    //   global: true,
-    //   disableCopy: true,
-    // },
+    copyright: {
+      author: "gqzcl",
+      license: "MIT",
+      global: true,
+      disableCopy: true,
+    },
 
     pwa: {
       favicon: "/favicon.ico",
