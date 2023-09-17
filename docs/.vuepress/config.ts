@@ -1,5 +1,6 @@
-import { defineUserConfig } from "vuepress";
 import theme from "./theme";
+import { defineUserConfig } from "vuepress";
+import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 
 export default defineUserConfig({
@@ -29,6 +30,11 @@ export default defineUserConfig({
       apiKey: "",
       indexName: "",
       appId: 'YOUR_APP_ID',
+    }),
+    // 自动生成目录
+    autoCatalogPlugin({
+      //插件选项
+      index: true,
     }),
   ],
 
