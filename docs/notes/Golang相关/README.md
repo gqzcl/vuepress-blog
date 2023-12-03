@@ -16,3 +16,4 @@ star: true
 - [GO-Slice](GO-Slice.md)
 - [Goland使用](Goland使用.md)
 - [Uber_Go语言编码规范](Uber_Go语言编码规范.md)
+- [Golang中Test使用及技巧](Golang中Test使用及技巧.md)

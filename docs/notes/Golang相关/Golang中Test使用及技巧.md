@@ -3,7 +3,6 @@
 icon: page
 title: Golang中Test使用及技巧
 date: '2022-08-30 09:56:12'
-meta: []
 permalink: /post/test-in-golang-and-skills-1g2gs8.html
 category:
   - Golang相关
@@ -226,12 +225,8 @@ go-cover-treemap -coverprofile cover.out > out.svg
 ## 压力测试benchmark
 
 ## 模糊测试Fuzzing
-
-testing单元测试及自动生成[^1]
-
 ‍
-
-[^1]: # testing单元测试及自动生成
+### testing单元测试及自动生成
 
     #### go test 命令
 

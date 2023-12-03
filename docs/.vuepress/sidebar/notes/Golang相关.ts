@@ -10,4 +10,5 @@ export const Golang相关= arraySidebar([
     "实效go编程",
     "Go编程规范",
     "GO-Slice",
+    "Golang中Test使用及技巧",
 ]);

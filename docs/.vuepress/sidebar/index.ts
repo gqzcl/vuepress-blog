@@ -26,30 +26,6 @@ export const zh = sidebar({
     "",
     "home",
     "slide",
-    {
-      text: "笔记",
-      icon: "read",
-      link: "/notes/",
-    },
-    {
-      text: "文章",
-      icon: "note",
-      prefix: "posts/",
-      children: [
-        {
-          text: "文章 1-4",
-          icon: "note",
-          collapsible: true,
-          prefix: "article/",
-          children: ["article1", "article2", "article3", "article4"],
-        },
-        {
-          text: "文章 5-12",
-          icon: "note",
-          children: [],
-        },
-      ],
-    },
   ],
 
   "/notes/Golang相关/": Golang相关,
@@ -80,44 +56,5 @@ export const en = sidebar({
     "",
     "home",
     "slide",
-    {
-      icon: "creative",
-      text: "Guide",
-      prefix: "guide/",
-      link: "guide/",
-      children: "structure",
-    },
-    {
-      text: "Articles",
-      icon: "note",
-      prefix: "posts/",
-      children: [
-        {
-          text: "Articles 1-4",
-          icon: "note",
-          collapsible: true,
-          prefix: "article/",
-          children: ["article1", "article2", "article3", "article4"],
-        },
-        {
-          text: "Articles 5-12",
-          icon: "note",
-          children: [
-            {
-              text: "Articles 5-8",
-              icon: "note",
-              collapsible: true,
-              prefix: "article/",
-              children: ["article5", "article6", "article7", "article8"],
-            },
-            {
-              text: "Articles 9-12",
-              icon: "note",
-              children: ["article9", "article10", "article11", "article12"],
-            },
-          ],
-        },
-      ],
-    },
   ],
 });
