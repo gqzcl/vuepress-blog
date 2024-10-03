@@ -1,6 +1,5 @@
-.yarn
+
 node_modules/
-docs/.vuepress/.cache/
-docs/.vuepress/.temp/
-docs/.vuepress/dist/
-guide
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+src/.vuepress/dist/
